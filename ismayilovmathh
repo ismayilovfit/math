@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İsmayılov Math - Riyazi Analiz 1 və 2 Düsturları</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #3b5998, #192f6a);
+            color: #fff;
+            text-align: center;
+            padding: 30px;
+        }
+        h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease;
+        }
+        .formula-title {
+            cursor: pointer;
+            background: #4c69ba;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 10px auto;
+            width: 70%;
+            font-size: 1.5em;
+            transition: 0.3s;
+        }
+        .formula-title:hover {
+            background: #3b5998;
+        }
+        .formula-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            background: #f0f0f0;
+            color: #333;
+            padding: 0 20px;
+            border-radius: 15px;
+            margin: 10px auto;
+            width: 70%;
+            text-align: left;
+        }
+        .formula-content.active {
+            max-height: 500px;
+            padding: 20px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <h1>İsmayılov Math</h1>
+    <div class="formula-title" onclick="toggleFormula('limit')">Limitlər və Davamlılıq</div>
+    <div class="formula-content" id="limit">
+        <ul>
+            <li>lim (x → a) f(x) = L</li>
+            <li>lim (x → ∞) f(x) = L</li>
+            <li>Davamlılıq: f(x) nöqtədə davamlıdır əgər lim (x → c) f(x) = f(c)</li>
+        </ul>
+    </div>
+    <div class="formula-title" onclick="toggleFormula('derivative')">Törəmələr və Diferensiallar</div>
+    <div class="formula-content" id="derivative">
+        <ul>
+            <li>f'(x) = lim (h → 0) (f(x+h) - f(x))/h</li>
+            <li>(u · v)' = u'v + uv'</li>
+            <li>(u/v)' = (u'v - uv')/v²</li>
+        </ul>
+    </div>
+    <div class="formula-title" onclick="toggleFormula('integral')">İnteqrallar</div>
+    <div class="formula-content" id="integral">
+        <ul>
+            <li>∫ xⁿ dx = (xⁿ⁺¹)/(n+1) + C</li>
+            <li>∫ eˣ dx = eˣ + C</li>
+            <li>∫ (1/x) dx = ln|x| + C</li>
+        </ul>
+    </div>
+    <div class="formula-title" onclick="toggleFormula('series')">Seriyalar və Cəmlər</div>
+    <div class="formula-content" id="series">
+        <ul>
+            <li>Aritmetik silsilə: Sₙ = (n/2)(a₁ + aₙ)</li>
+            <li>Həndəsi silsilə: Sₙ = a₁(1-rⁿ)/(1-r)</li>
+            <li>Sonsuz həndəsi silsilə: S = a₁/(1-r)</li>
+        </ul>
+    </div>
+    <script>
+        function toggleFormula(id) {
+            const content = document.getElementById(id);
+            content.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
